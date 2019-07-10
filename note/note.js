@@ -15,3 +15,18 @@ publicPath：对页面中引入的资源路径进行补全。
 2019.7.10
 url-loader：option对象下的limit属性表示，如果图片文件大小低于limit限制的大小（字节），则将图片转成base64
 格式的dataRUL（如图base64.png）。大于limit限制大小的图片文件，则以file-loader的方式进行加载。
+
+file-loader：option下的name属性可以设置打包后文件存放的地址及文件名。
+比如：{
+      loader: 'file-loader',
+      options: {
+          limit: 8192,
+          name: 'image/[name].[ext]'
+      }
+    }
+生成的文件地址在/image目录下，文件名为打包前的文件名
+options: {
+          name: '[path][name].[ext]',
+        }
+[path]: 以打包前文件的路径为模板，生成相同的路径结构在output设置的目录下。
+[name]: 默认是打包前的文件名。
