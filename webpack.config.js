@@ -20,10 +20,14 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             limit: 8192,
-                            name: 'image/[name].[ext]'
+                            name: '/images/[name].[ext]',
                         }
                     }
                 ],
+            },
+            {
+                test: /\.(ttf|woff)$/,
+                use: ['file-loader']
             }
         ],
     }

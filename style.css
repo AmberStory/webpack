@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'child';
+    src: url('./child.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+div {
+    font-size: 1cm;
+    font-family: 'child';
+    color: pink;
+    background: url(./img/bg.png);
+}
