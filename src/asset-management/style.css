@@ -9,5 +9,5 @@ div {
     font-size: 1cm;
     font-family: 'child';
     color: pink;
-    background: url(./img/test.png);
+    background: url(./img/test.png) no-repeat;
 }
