@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>node server</title>
+</head>
+<body>
+  <button id="btn">发送消息</button>
+</body>
+</html>
+<script>
+  var btn = document.querySelector('#btn');
+  btn.onclick = function () {
+    var xml = new XMLHttpRequest();
+    xml.open('get', 'http://127.0.0.1:8800/start', false);
+    // xml.setRequestHeader('If-Modified-Since', 'Wed, 21 Oct 2020 07:28:00 GMT');
+    xml.send(null);
+    btn.innerHTML = xml.responseText;
+  }
+</script>
