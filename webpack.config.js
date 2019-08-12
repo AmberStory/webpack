@@ -5,18 +5,24 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/output-management/index.js',
+    app: './src/index.js',
+    otherModule: './src/output-management/print.js'
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[hash].js',
+    chunkFilename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
-  devtool: 'inline-source-map',
-  devServer: { contentBase: './dist', hot: true },
+  // devtool: 'inline-source-map',
+  // devServer: { contentBase: './dist', hot: true },
+  mode:'development',
+  optimization: {
+    usedExports: true
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      title: 'caching',
       inject: "true",
       meta: {
         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
