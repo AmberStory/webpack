@@ -27,6 +27,7 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "koa": "^2.7.0",
     "lodash": "^4.17.11",
     "url-loader": "^2.0.1"
   }
